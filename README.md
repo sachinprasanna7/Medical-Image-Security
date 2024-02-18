@@ -59,7 +59,7 @@ Image normalization procedure is utilized to transform the original image, â€˜ğ
 - Rounak Jain
 
 ## Mentor
-Dr CD Jaidhar
+Dr Jaidhar C.D.
 
 
 
