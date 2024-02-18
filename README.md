@@ -1,4 +1,4 @@
-# IT 350 Course Project
+# IT 352 Course Project
 
 The following repository is an implementation of the paper titled 'SecDH: Security of COVID-19 Images Based on Data Hiding with PCA' by Singh, O. P., et al., published in Computer Communications (2022, Volume 191, Pages 368-377).
 
