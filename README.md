@@ -50,6 +50,15 @@ The simplified concept of PCA based fusion is shown is implemented. It is utiliz
 Image normalization procedure is utilized to transform the original image, ‘𝑂𝑟𝑔𝑖𝑚𝑔 ’ into normalized image, ‘𝑁𝑜𝑟𝑚𝑖𝑚𝑔’. Further, '𝑁𝑜𝑟𝑚𝑖𝑚𝑔' and mark image, ‘𝑊𝑎𝑡𝑖𝑚𝑔' are transformed using RDWT and RSVD respectively. Furthermore, PCA fusion is employed to compute the optimal embedding factor for embedding purpose. The principal component of mark image is concealed inside cover image. Furthermore, inverse operation of RSVD and RDWT is performed to compute the marked image, ‘𝑀𝑎𝑟𝑘𝑖𝑚𝑔 ’. Lastly, Arnold cat map is performed on 𝑀𝑎𝑟𝑘𝑖𝑚𝑔 enhance the additional security of proposed scheme.
 
 
+## Code Contributors:
+- Sachin Prasanna
+- Abhayjit Singh Gulati
+- Rounak Jain
+
+## Mentor
+Dr CD Jaidhar
+
+
 
 
 
