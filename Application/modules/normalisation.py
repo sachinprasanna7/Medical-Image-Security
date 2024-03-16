@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
+# In[1]:
 
 
 import cv2
@@ -9,18 +9,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pywt
 
-# In[10]:
+# In[4]:
 
 
 img = cv2.imread('assets/input_image.png', 0)
 
-# In[11]:
+# In[5]:
 
 
 #show the image
 plt.imshow(img, cmap='gray', interpolation='bicubic')
 
-# In[12]:
+# In[6]:
 
 
 #show the matrix image and its size
@@ -29,7 +29,7 @@ print(img)
 print(img.max())
 print(img.min())
 
-# In[13]:
+# In[7]:
 
 
 # calculate moments
@@ -74,7 +74,7 @@ def findMoments (img):
     return variables_dict
 
 
-# In[14]:
+# In[8]:
 
 
 def translate (img, variables_dict):
@@ -88,7 +88,7 @@ def translate (img, variables_dict):
 
     return img_translated
 
-# In[15]:
+# In[9]:
 
 
 def shear(img, variables_dict, direction):
@@ -107,7 +107,7 @@ def shear(img, variables_dict, direction):
 
     return img_sheared
 
-# In[16]:
+# In[10]:
 
 
 variables_dict = findMoments(img)
