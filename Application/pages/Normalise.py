@@ -37,12 +37,28 @@ else:
 
 st.write("---")
 st.subheader("Normalised Image")
-if st.button("Perform Normalisation"):
-    os.system("jupyter nbconvert --to script modules/normalisation.ipynb")
-    os.system("python modules/normalisation.py")
-    # display the normalised image after the button is clicked
+# if st.button("Perform Normalisation"):
+#     os.system("jupyter nbconvert --to script modules/normalisation.ipynb")
+#     os.system("python modules/normalisation.py")
+#     # display the normalised image after the button is clicked
+#     if os.path.exists("generated_assets/normalisation.png"):      
+#       st.image("generated_assets/normalisation.png", use_column_width=True)
+
+
+if not image:
+    st.warning("Please upload an image using the uploader above.")
+else:
+    with st.spinner("Performing Normalisation on the image. Please wait..."):
+        os.system("jupyter nbconvert --to script modules/normalisation.ipynb")
+        os.system("python modules/normalisation.py")
+
     if os.path.exists("generated_assets/normalisation.png"):      
-      st.image("generated_assets/normalisation.png", use_column_width=True)
+        
+        st.image("generated_assets/normalisation.png", use_column_width=True)
+    else:
+        st.error("An error occurred while processing the image. Please try again.")
+
+
 
 
 

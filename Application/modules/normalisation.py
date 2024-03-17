@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[11]:
 
 
 import cv2
@@ -9,12 +9,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pywt
 
-# In[4]:
+# In[12]:
 
 
 img = cv2.imread('assets/input_image.png', 0)
 
-# In[5]:
+# In[13]:
 
 
 #show the image

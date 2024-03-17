@@ -17,7 +17,14 @@ st.markdown("### Arnold Cat Map")
 
 st.write("---")
 
+
+st.subheader("Select the number of iterations")
+iterations = st.slider("Select the number of iterations", 1, 192, 1)
+
+st.write("---")
+
 # Upload image
+st.subheader("Upload an Image")
 image = st.file_uploader("Upload Image", type=["jpg", "jpeg", "png"])
 
 st.write("---")
@@ -37,13 +44,24 @@ else:
 
 st.write("---")
 st.subheader("Arnold Scrambled Image")
-if st.button("Perform Arnold Scramble"):
-    os.system("jupyter nbconvert --to script modules/arnold_cat_map.ipynb")
-    os.system("python modules/arnold_cat_map.py")
-    # display the normalised image after the button is clicked
+
+if not image:
+    st.warning("Please upload an image using the uploader above.")
+else:
+    with st.spinner("Performing Arnold Scrambling on the image. Please wait..."):
+        os.system("jupyter nbconvert --to script modules/arnold_cat_map.ipynb")
+        os.system(f"python modules/arnold_cat_map.py --iterations {iterations}")
+
     if os.path.exists("generated_assets/arnold.png"):      
       st.image("generated_assets/arnold.png", use_column_width=True)
 
+    #   st.write("---")
+    #   st.subheader("Arnold Scrambled Image (Inverse)")
+    #   if st.button("Perform Inverse Arnold Scrambling"):
+    #         if os.path.exists("generated_assets/inverse_arnold.png"):      
+    #             st.image("generated_assets/inverse_arnold.png", use_column_width=True)
+    else:
+        st.error("An error occurred while processing the image. Please try again.")
 
 
 

@@ -13,7 +13,7 @@ st.set_page_config(
 
 st.title("Medical Image Security App")
 
-st.markdown("### RDWT")
+st.markdown("### Principal Component Analysis (PCA)")
 
 st.write("---")
 
@@ -28,7 +28,7 @@ if image:
     st.image(image, use_column_width=True)
 
     # Save the image to a specified location
-    save_path = "assets/input_image_rdwt.png"  # Specify your desired file path
+    save_path = "assets/input_image_pca.png"  # Specify your desired file path
     with open(save_path, "wb") as f:
         f.write(image.read())
 else:
@@ -36,28 +36,19 @@ else:
     st.warning("Please upload an image using the uploader above.")
 
 st.write("---")
-st.subheader("RDWT Image")
+st.subheader("PCA")
 
 if not image:
     st.warning("Please upload an image using the uploader above.")
 else:
-    with st.spinner("Performing RDWT on the image. Please wait..."):
-        os.system("jupyter nbconvert --to script modules/rdwt.ipynb")
-        os.system("python modules/rdwt.py")
+    with st.spinner("Performing PCA. Please wait..."):
+        os.system("jupyter nbconvert --to script modules/pca.ipynb")
+        os.system("python modules/pca.py")
 
-    if os.path.exists("generated_assets/image_rdwt.png"):    
-        st.image("generated_assets/image_rdwt.png", use_column_width=True)
-        st.write("---")
-        st.subheader("RDWT Image (Inverse)")
-        if os.path.exists("generated_assets/irdwt.png"):      
-              st.image("generated_assets/irdwt.png", use_column_width=True)
+    if os.path.exists("generated_assets/output_image_pca.png"):    
+        st.image("generated_assets/output_image_pca.png", use_column_width=True)
     else:
         st.error("An error occurred while processing the image. Please try again.")
-
-# st.write("---")
-# if st.button("Perform IRDWT"):
-#     if os.path.exists("generated_assets/irdwt.png"):      
-#       st.image("generated_assets/irdwt.png", use_column_width=True)
 
 
 
