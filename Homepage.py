@@ -34,16 +34,15 @@ if image:
         f.write(image.read())
 else:
     st.subheader("Uploaded Image")
-    st.markdown(
-        "<div style='background-color: #ffe066; padding: 10px; border-radius: 5px; line-height: 5em; text-align: center; color: #333;'>Please upload an image using the uploader above.</div>",
-        unsafe_allow_html=True
-    )
+    st.warning("Please upload an image using the uploader above.")
 
 
 st.write("---")
 
 # Upload image
 watermark_image = st.file_uploader("Upload Watermark Image", type=["jpg", "jpeg", "png"])
+
+st.write("---")
 
 # Define a section to display the uploaded image and save it
 if watermark_image:
@@ -56,10 +55,7 @@ if watermark_image:
         f.write(watermark_image.read())
 else:
     st.subheader("Uploaded Image")
-    st.markdown(
-        "<div style='background-color: #ffe066; padding: 10px; border-radius: 5px; line-height: 5em; text-align: center; color: #333;'>Please upload an image using the uploader above.</div>",
-        unsafe_allow_html=True
-    )
+    st.warning("Please upload an image using the uploader above.")
 
 st.write("---")
 st.subheader("Encryption")

@@ -113,9 +113,12 @@ def translate (img, variables_dict):
 
 
 img_translated = translate(img, moments_dict)
-plt.imshow(img_translated, cmap='gray')
-plt.title('Translated Image')
-plt.show()
+# generate the image in generated assets
+cv2.imwrite('generated_assets/final_translated_image.png', img_translated)
+
+# plt.imshow(img_translated, cmap='gray')
+# plt.title('Translated Image')
+# plt.show()
 
 # ## Shearing
 # 
@@ -152,7 +155,9 @@ ax[0].imshow(img_sheared_x, cmap='gray')
 ax[0].set_title('Image sheared in X direction')
 ax[1].imshow(img_sheared_y, cmap='gray')
 ax[1].set_title('Image sheared in Y direction')
-plt.show()
+plt.savefig('generated_assets/final_sheared_image.png')
+
+# plt.show()
 
 # ## Scaling
 # 
@@ -174,7 +179,8 @@ def scale(img, variables_dict, alpha, delta):
 
 
 img_scaled = scale(img, moments_dict, 1.5, 1.5)
-plt.imshow(img_scaled, cmap='gray')
+cv2.imwrite('generated_assets/final_scaled_image.png', img_scaled)
+# plt.imshow(img_scaled, cmap='gray')
 
 # ## Normalisation Function: Combining into one
 # 
@@ -199,7 +205,8 @@ def normalisation(img):
 
 
 img_normalised = normalisation(img)
-plt.imshow(img_normalised, cmap='gray')
+cv2.imwrite('generated_assets/final_normalised_image.png', img_normalised)
+# plt.imshow(img_normalised, cmap='gray')
 
 # # Randomised Singular Value Decomposition (RSVD)
 # 
@@ -258,7 +265,10 @@ axs[1].imshow(u_rsvd @ np.diag(s_rsvd) @ v_rsvd, cmap='gray')
 axs[1].set_title('RSVD Image')
 axs[2].imshow(u_svd @ np.diag(s_svd) @ v_svd, cmap='gray')
 axs[2].set_title('SVD Image')
-plt.show()
+
+plt.savefig('generated_assets/final_svd_rsvd_image.png')
+
+# plt.show()
 
 # # Redundant Discrete Wavelet Transform (RDWT)
 # 
@@ -305,7 +315,10 @@ axs[0, 1].imshow(B1, cmap='gray'), axs[0, 1].set_title('B1 (LH)')
 axs[1, 0].imshow(C1, cmap='gray'), axs[1, 0].set_title('C1 (HL)')
 axs[1, 1].imshow(D1, cmap='gray'), axs[1, 1].set_title('D1 (HH)')
 plt.tight_layout()
-plt.show()
+
+plt.savefig('generated_assets/final_rdwt_image.png')
+
+# plt.show()
 
 # # Principal Component Analysis
 # 
@@ -364,7 +377,9 @@ plt.imshow(reconstructed_image, cmap='gray')
 plt.title('Reconstructed Image using PCA')
 plt.axis('off')
 
-plt.show()
+plt.savefig('generated_assets/final_pca_image.png')
+
+# plt.show()
 
 # # Arnold Cat Maps
 # 
@@ -408,17 +423,18 @@ def arnold_scramble(img, iterations):
 
 
 scrambled_img = arnold_scramble(img, 53)
+cv2.imwrite('generated_assets/final_scrambled_image.png', scrambled_img)
 
 # In[23]:
 
 
-print('Original Image: ')
-plt.imshow(img, cmap='gray')
-plt.show()
+# print('Original Image: ')
+# plt.imshow(img, cmap='gray')
+# plt.show()
 
-print('Scrambled Image: (After 53 iterations)')
-plt.imshow(scrambled_img, cmap='gray')
-plt.show()
+# print('Scrambled Image: (After 53 iterations)')
+# plt.imshow(scrambled_img, cmap='gray')
+# plt.show()
 
 # # Algorithm 1: Determination of Principal Cofficients
 # 
@@ -473,6 +489,22 @@ PC1, PC2 = algorithm_1(path1, path2)
 
 print('Principal Component 1:', PC1)
 print('Principal Component 2:', PC2)
+
+import pandas as pd
+# create a dataframe to store the results of PC1 and PC2
+df = pd.DataFrame({'Principal Component 1': [PC1], 'Principal Component 2': [PC2]})
+
+fig, ax = plt.subplots()
+ax.axis('tight')
+ax.axis('off')
+table = ax.table(cellText=df.values, colLabels=df.columns, cellLoc = 'center', loc='center')
+table.auto_set_font_size(False)
+table.set_fontsize(14)
+table.scale(1.5, 1.5)
+
+# Save the table as an image
+plt.savefig('generated_assets/final_principal_components.png', bbox_inches='tight', pad_inches=0.05)
+
 
 # # Algorithm 2: Watermark Embedding
 # 
@@ -547,7 +579,9 @@ plt.subplot(1, 2, 2)
 plt.imshow(enc_mark_img, cmap='gray')
 plt.title('Encrypted Image using Algorithm 2')
 plt.axis('off')
-plt.show()
+
+plt.savefig('generated_assets/final_encrypted_image.png')
+# plt.show()
 
 # # Algorithm 3: Watermarking Extraction
 
@@ -617,7 +651,9 @@ plt.imshow(Rec_Wat_img, cmap='gray')
 plt.title('Recovered watermark Image using Algorithm 3')
 plt.axis('off')
 
-plt.show()
+plt.savefig('generated_assets/final_recovered_watermark_image.png')
+
+# plt.show()
 
 # # Performance Metrics
 
