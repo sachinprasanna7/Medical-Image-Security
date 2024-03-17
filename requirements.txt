@@ -1,7 +1,6 @@
 nbformat
-streamlit
 pandas
 numpy
 plotly
 nbconvert
-opencv-python
+opencv-python-headless
