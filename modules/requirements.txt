@@ -1,0 +1,7 @@
+nbformat
+streamlit
+pandas
+numpy
+plotly
+nbconvert
+opencv-python
