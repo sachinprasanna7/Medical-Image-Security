@@ -4,4 +4,4 @@ pandas
 numpy
 plotly
 nbconvert
-cv2
+opencv-python
