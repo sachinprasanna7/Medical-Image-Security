@@ -157,20 +157,7 @@ else:
                     st.warning("The decrypted image is not available.")
 
 
-
-# # Separator
-# st.write("---")
-
-# # Footer
-# st.markdown(
-#     """
-#     <div class="footer">
-#         <p style="text-align:center;color:#666;">Made with ❤️ by Team 2</p>
-#     </div>
-#     """,
-#     unsafe_allow_html=True
-# )
-                    
+        
 # Footer
 st.markdown("---")
 
