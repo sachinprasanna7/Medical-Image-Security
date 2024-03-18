@@ -1,4 +1,3 @@
-# basic streamlit configuration
 import streamlit as st
 import pandas as pd
 import os
@@ -10,10 +9,9 @@ import cv2
 st.set_page_config(
     page_title="Medical Image Security",
     page_icon=":hospital:",
-    layout="wide",  # Use wide layout for better UI
+    layout="wide",  
 )
 
-# Define CSS styles
 css = """
     <style>
         /* Center align the app title */
@@ -53,7 +51,7 @@ css = """
 # Render CSS
 st.markdown(css, unsafe_allow_html=True)
 
-# App title and information
+
 st.markdown("<h1 class='title'>Medical Image Security App</h1>", unsafe_allow_html=True)
 st.write("---")
 st.markdown("<div class='info'>National Institute of Technology Karnataka</div>", unsafe_allow_html=True)
@@ -69,7 +67,6 @@ with col2:
     st.image("nitk_logo.png", width=100)
 
 
-# Separator
 st.write("---")
 
 # Upload image
@@ -103,7 +100,6 @@ watermark_image = st.file_uploader("Upload Watermark Image", type=["jpg", "jpeg"
 
 st.write("---")
 
-# Define a section to display the uploaded image and save it
 if watermark_image:
     st.subheader("Watermark Image")
     col1, col2, col3 = st.columns(3)
