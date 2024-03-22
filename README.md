@@ -1,6 +1,6 @@
-# IT 352 Course Project
+# Medical-Image-Security
 
-The following repository is an implementation of the paper titled 'SecDH: Security of COVID-19 Images Based on Data Hiding with PCA' by Singh, O. P., et al., published in Computer Communications (2022, Volume 191, Pages 368-377).
+The following repository is an implementation of the paper titled 'SecDH: Security of COVID-19 Images Based on Data Hiding with PCA' by Singh, O. P., et al., published in Computer Communications (2022, Volume 191, Pages 368-377). It was implemented as a part to fulfill the project requirement of the Information Security and Assurance (IT352) course.
 
 ## Introduction
 The paper introduces a data hiding scheme, guaranteeing the security of COVID-19 images. The scheme involves a seamless combination of RDWT-RSVD for imperceptible logo marking within the carrier media, effectively addressing the False Positive Problem (FPP). The repository showcases the implementation where the principal component of the mark image is concealed in the host image. Furthermore, Principal Component Analysis (PCA) is utilized to determine the normalized principal component for embedding purposes. The implementation aligns with the objectives outlined in the research paper and provides a practical demonstration of the proposed security measures.
@@ -72,18 +72,17 @@ NC measures the similarity between two signals or images by computing their cros
 
 # Usage
 
-Clone the repo onto your local machine.
+Clone the repository onto your local machine.
 
 Run the command: streamlit run Homepage.py
+
+Use the web app on localhost.
 
 
 ## Code Contributors:
 - Sachin Prasanna
 - Abhayjit Singh Gulati
 - Rounak Jain
-
-## Mentor
-Dr Jaidhar C.D.
 
 
 
