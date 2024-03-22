@@ -1,0 +1,6 @@
+nbformat
+pandas
+numpy
+plotly
+nbconvert
+opencv-python-headless
