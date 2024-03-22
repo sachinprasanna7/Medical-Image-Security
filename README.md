@@ -2,8 +2,10 @@
 
 The following repository is an implementation of the paper titled 'SecDH: Security of COVID-19 Images Based on Data Hiding with PCA' by Singh, O. P., et al., published in Computer Communications (2022, Volume 191, Pages 368-377). It was implemented as a part to fulfill the project requirement of the Information Security and Assurance (IT352) course.
 
-## Introduction
+# Introduction
 The paper introduces a data hiding scheme, guaranteeing the security of COVID-19 images. The scheme involves a seamless combination of RDWT-RSVD for imperceptible logo marking within the carrier media, effectively addressing the False Positive Problem (FPP). The repository showcases the implementation where the principal component of the mark image is concealed in the host image. Furthermore, Principal Component Analysis (PCA) is utilized to determine the normalized principal component for embedding purposes. The implementation aligns with the objectives outlined in the research paper and provides a practical demonstration of the proposed security measures.
+
+# Algorithms Implemented
 
 ## Normalisation
 
@@ -56,17 +58,17 @@ Image normalization procedure is utilized to transform the original image, ‘�
 
 It is the just inverse procedure of embedding scheme. First, inverse Arnold cat map is performed to obtain decrypted marked image, ‘𝐷𝑒𝑐_𝑀𝑎𝑟𝑘𝑖𝑚𝑔 ’ and then it is transformed using RDWT and RSVD. Further, singular value is extracted using PCA fusion. Lastly, the mark image is recovered by applying the inverse of RSVD and IDWT respectively.
 
-## Performance Metrics
+# Performance Metrics
 
-# PSNR
+## PSNR
 
 PSNR measures the ratio between the maximum possible power of a signal and the power of corrupting noise that affects the fidelity of its representation. Higher PSNR values indicate better image quality. However, PSNR does not always correlate well with human perception, especially for perceptually important features.
 
-# SSIM 
+## SSIM 
 
 SSIM assesses the similarity between two images in terms of luminance, contrast, and structure, mimicking human perception. Higher SSIM values indicate greater similarity between images. SSIM is considered more accurate than PSNR in assessing perceptual quality as it takes into account structural information.
 
-# NC
+## NC
 
 NC measures the similarity between two signals or images by computing their cross-correlation and normalizing it. NC values close to 1 indicate high similarity, while values close to 0 indicate dissimilarity. NC is sensitive to changes in brightness and contrast but does not consider structural information as comprehensively as SSIM.
 
@@ -79,7 +81,7 @@ Run the command: streamlit run Homepage.py
 Use the web app on localhost.
 
 
-## Code Contributors:
+# Code Contributors:
 - Sachin Prasanna
 - Abhayjit Singh Gulati
 - Rounak Jain
